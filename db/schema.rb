@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_29_193242) do
+ActiveRecord::Schema.define(version: 2020_03_30_125030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "health_benefits", force: :cascade do |t|
-    t.string "benefit"
+    t.string "benefit", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["benefit"], name: "index_health_benefits_on_benefit", unique: true
     t.index ["user_id"], name: "index_health_benefits_on_user_id"
   end
 
@@ -35,10 +36,11 @@ ActiveRecord::Schema.define(version: 2020_03_29_193242) do
   end
 
   create_table "herbs", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_herbs_on_name", unique: true
     t.index ["user_id"], name: "index_herbs_on_user_id"
   end
 
@@ -62,6 +64,8 @@ ActiveRecord::Schema.define(version: 2020_03_29_193242) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "authentication_token", limit: 30
+    t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
