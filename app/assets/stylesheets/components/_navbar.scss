@@ -1,6 +1,13 @@
 .navbar-lewagon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  height: 80px;
   justify-content: space-between;
-  background: white;
+  width: 100%;
+  padding: 1rem 3rem;
+  z-index: 3;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +15,33 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 150px;
+}
+
+@media (max-width: 767px) {
+  .navbar-light {
+    .navbar-nav {
+      .active {
+        .nav-link {
+          color: #749B51;
+          &:hover {
+            color: rgba(116,155,81, 0.7);
+          }
+        }
+      }
+      .nav-link {
+        color: rgba(116,155,81, 0.7);
+        &:hover {
+          color: rgba(116,155,81, 1);
+        }
+      }
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(116,155,81)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+
+    .navbar-toggler {
+      border-color: rgba(116,155,81, 0.4);
+    }
+  }
 }

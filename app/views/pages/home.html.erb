@@ -1,2 +1,36 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="row full-height">
+  <div class="col col-12 col-md-4 left d-flex
+              align-items-end justify-content-center">
+    <%= image_tag "avatar.svg", class: "avatar-home-small d-md-none" %>
+    <%= image_tag "avatar.svg", class: "avatar-home d-none d-md-block" %>
+  </div>
+  <div class="col col-12 col-md-8 right d-flex flex-column
+              justify-content-center align-items-center
+              justify-content-md-center align-items-md-center">
+    <div class="content">
+      <h1 class="pb-4">Welcome to The Tea API</h1>
+      <h2 class="pb-3">Find teas from all over the world 🌿</h2>
+      <h3 class="pb-4 comment"># There's also a free json API, feel free to use it.</h3>
+      <p>The API is currently being delevoped so stay tunned!</p>
+      <p>Have some tea while I work on it 🍵</p>
+      <!-- <div>
+        <p>Right now, you can search the different types of herbs to make tea.</p>
+        <div class="form-container" id="form-box">
+          <h4>Enter a herb or a tea type</h4>
+
+          <%#= simple_form_for :search, url: tea_beverages_path, method: :get do |f| %>
+
+            <div class="search-form-control form-group">
+              <%#= f.input :neighborhood, label: false, class: 'form-control string required', id:"address", placeholder: "Example: Chiado" %>
+            </div>
+
+            <div class="form-actions">
+              <%#= f.submit "Search", class: "btn btn-gradient btn-margin" %>
+            </div>
+
+          <%# end %>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>

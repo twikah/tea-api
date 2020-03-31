@@ -1,1 +1,27 @@
 // Specific CSS for your home-page
+.left {
+  position: relative;
+  background-color: #222;
+  width: 100%;
+  min-height: 35vh;
+}
+.right {
+  position: relative;
+  background-color: #eaeaea;
+  width: 100%;
+}
+.avatar-home {
+  width: 400px;
+  position: absolute;
+  right: -25%;
+  z-index: 3;
+}
+.avatar-home-small {
+  width: 40%;
+}
+.content {
+  width: 75%;
+}
+.comment {
+  color: #666;
+}
