@@ -7,7 +7,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :herbs
-  has_many :herb_varietals
-  has_many :health_benefits
-  has_many :ingredients_benefits
+  has_many :herb_types
+  has_many :herb_varieties
 end

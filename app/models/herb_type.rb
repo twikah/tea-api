@@ -1,7 +1,7 @@
-class Herb < ApplicationRecord
+class HerbType < ApplicationRecord
   belongs_to :user
-  has_many :herb_types, dependent: :destroy
-  has_many :herb_varieties, through: :herb_types
+  belongs_to :herb
+  has_many :herb_varieties, dependent: :destroy
 
   before_save :downcase_herb
 

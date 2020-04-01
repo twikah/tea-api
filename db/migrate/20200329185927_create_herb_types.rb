@@ -1,8 +1,7 @@
-class CreateHerbVarietals < ActiveRecord::Migration[6.0]
+class CreateHerbTypes < ActiveRecord::Migration[6.0]
   def change
-    create_table :herb_varietals do |t|
-      t.string :herb_type
-      t.string :name
+    create_table :herb_types do |t|
+      t.string :name, null: false, index: { unique: true }
       t.references :herb, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
 

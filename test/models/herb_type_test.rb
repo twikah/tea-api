@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class HerbVarietalTest < ActiveSupport::TestCase
+class HerbTypeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
