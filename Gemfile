@@ -38,6 +38,10 @@ gem 'simple_token_authentication'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
+
+# Slug handling
+gem 'friendly_id', '~> 5.2.4'
+
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'

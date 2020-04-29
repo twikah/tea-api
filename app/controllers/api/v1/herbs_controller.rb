@@ -3,7 +3,11 @@ class Api::V1::HerbsController < Api::V1::BaseController
   before_action :set_herb, only: [ :show, :update, :destroy ]
 
   def index
-    @herbs = policy_scope(Herb)
+    if params[:name]
+      @herbs = policy_scope(Herb.where('name ILIKE ?', "%#{params[:name]}%"))
+    else
+      @herbs = policy_scope(Herb)
+    end
   end
 
   def show
@@ -36,7 +40,7 @@ class Api::V1::HerbsController < Api::V1::BaseController
   private
 
   def set_herb
-    @herb = Herb.find(params[:id])
+    @herb = Herb.friendly.find(params[:id])
     authorize @herb  # For Pundit
   end
 
