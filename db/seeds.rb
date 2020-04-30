@@ -9,12 +9,22 @@
 puts "Checking up database records..."
 
 puts "Checking users..."
-user_rows = User.upsert(
-  { email: 'vanessaesanto@hotmail.com', encrypted_password: '123456',
-    created_at: Time.now, updated_at: Time.now
-  }, returning: ['id'], unique_by: :email)
+# user_rows = User.upsert(
+#   { first_name: 'Vanessa', last_name: 'Santo',
+#     email: 'teaapi_admin@gmail.com', encrypted_password: 'topsecret',
+#     role: 'user', created_at: Time.now, updated_at: Time.now
+#   }, returning: ['id'], unique_by: :email)
 
-user_id = user_rows[0]['id']
+# user_id = user_rows[0]['id']
+
+user = User.new(
+  first_name: 'Vanessa', last_name: 'Santo',
+  email: 'teaapi_admin@gmail.com', password: 'topsecret',
+  password_confirmation: 'topsecret', confirmed_at: Time.now, role: 'user'
+)
+
+user.save!
+user_id = user.id
 
 puts "Checking herbs..."
 herb_rows = Herb.upsert_all([
@@ -272,8 +282,8 @@ MiscIngredient.upsert_all([
     created_at: Time.now, updated_at: Time.now }
 ], unique_by: :name)
 
-Herb.find_each(&:save);
-HerbType.find_each(&:save);
-MiscIngredient.find_each(&:save);
+Herb.find_each(&:save!)
+HerbType.find_each(&:save!)
+MiscIngredient.find_each(&:save!)
 
 puts "Seeded!"

@@ -7,4 +7,8 @@ class MiscIngredient < ApplicationRecord
   before_save { name.downcase! }
 
   validates :name, presence: true, uniqueness: true
+
+  def should_generate_new_friendly_id?
+    name_changed? || super
+  end
 end
