@@ -272,4 +272,8 @@ MiscIngredient.upsert_all([
     created_at: Time.now, updated_at: Time.now }
 ], unique_by: :name)
 
+Herb.find_each(&:save);
+HerbType.find_each(&:save);
+MiscIngredient.find_each(&:save);
+
 puts "Seeded!"
