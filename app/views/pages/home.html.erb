@@ -1,20 +1,19 @@
-<div class="row full-height">
+<div class="row d-md-flex min-vh-100">
   <div class="col col-12 col-md-4 left-container d-flex
               align-items-end justify-content-center">
-    <%= image_tag "avatar.svg", class: "avatar-home-small d-md-none" %>
-    <%= image_tag "avatar.svg", class: "avatar-home d-none d-md-block" %>
+    <%= image_tag "avatar.svg", class: "tea-cup-home-small d-md-none" %>
+    <%= image_tag "avatar.svg", class: "tea-cup-home d-none d-md-block" %>
   </div>
-  <div class="col col-12 col-md-8 right-container d-flex flex-column
-              justify-content-center align-items-center
-              justify-content-md-center align-items-md-center pb-5">
-    <div class="content">
+  <div class="col col-12 col-md-8 d-flex flex-column
+              justify-content-center align-items-center py-5">
+    <div class="content py-5">
       <h1 class="pb-4">Welcome to The Tea API</h1>
       <h2 class="pb-3">
         Find teas from all over the world and learn what beverages can you make
         with them 🌿
       </h2>
       <h3 class="pb-4 grey-paragraph">
-        There's also a free link <%= link_to 'json API', api_path %>, feel free
+        There's also a free <%= link_to 'json API', api_path %>, feel free
         to use it.
       </h3>
       <p>

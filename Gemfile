@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 # Authentication
 gem 'devise'
+gem 'omniauth-github'
 # Authorization
 gem 'pundit'
 # API key auth

@@ -1,20 +1,50 @@
-<h2>Log in</h2>
+<div class="row d-md-flex min-vh-100 min-vw-100">
+  <div class="col col-12 col-md-3 left-container"></div>
+  <div class="col col-12 col-md-9 py-5">
+    <div class="row w-75 d-flex registration-card">
+      <div class="col col-md-4 registration-card-left d-flex
+                  align-items-end rounded-left">
+        <%= image_tag "avatar.svg", class: "tea-cup-registration" %>
+      </div>
+      <div class="col col-md-8 registration-card-right p-5 rounded-right">
+        <h2 class="pb-4">Log in</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <%= simple_form_for(resource, as: resource_name,
+                                      url: session_path(resource_name),
+                                      wrapper: :input_group) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email,
+                        required: true,
+                        label: false,
+                        autofocus: true,
+                        placeholder: '✉️ email@domain.com',
+                        input_html: { autocomplete: "email" } %>
+            <%= f.input :password,
+                        required: true,
+                        label: false,
+                        placeholder: '🗝 your-password',
+                        input_html: { autocomplete: "current-password" } %>
+
+            <div class="row">
+              <%= f.input :remember_me,
+                          wrapper_html: { class: 'rememberable-checkbox col' },
+                          as: :boolean if devise_mapping.rememberable? %>
+              <div class="col text-right forgot-password-container">
+                <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                  <%= link_to "Forgot password?", new_password_path(resource_name),
+                    class: 'links-small' %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Log in", class: 'btn btn-dark btn-block' %>
+          </div>
+        <% end %>
+        <p class="text-center py-4">- OR -</p>
+        <%= link_to "Sign in with Github", user_github_omniauth_authorize_path %>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
