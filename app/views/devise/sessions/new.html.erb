@@ -10,8 +10,7 @@
         <h2 class="pb-4 text-center text-md-left">Log in</h2>
 
         <%= simple_form_for(resource, as: resource_name,
-                                      url: session_path(resource_name),
-                                      wrapper: :input_group) do |f| %>
+                                      url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
             <%= f.input :email,
                         required: true,
