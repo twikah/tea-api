@@ -3,10 +3,12 @@
   <div class="col col-12 col-md-8 py-5">
     <div class="row d-md-flex registration-card">
       <div class="col-sm-12 col-md-4 registration-card-left d-none d-sm-block
-                  text-center d-md-flex align-items-end rounded-left">
+                  text-center d-md-flex align-items-end rounded-left p-4 px-sm-5
+                  pt-sm-5 pb-sm-2">
         <%= image_tag "avatar.svg", class: "tea-cup-registration" %>
       </div>
-      <div class="col-sm-12 col-md-8 registration-card-right p-4 px-sm-5 pt-sm-5 pb-sm-2 rounded-right">
+      <div class="col-sm-12 col-md-8 registration-card-right p-4 px-sm-5 pt-sm-5
+                  pb-sm-2 rounded-right">
         <h2 class="pb-4 text-center text-md-left">Sign up</h2>
 
         <%= simple_form_for(resource, as: resource_name,
@@ -17,14 +19,14 @@
                         required: true,
                         label: false,
                         autofocus: true,
-                        placeholder: '🧑‍💼 First name',
+                        placeholder: '👤 First name',
                         wrapper_html: { class: 'col-12 col-lg-6' },
                         input_html: { autocomplete: "first name" }%>
             <%= f.input :last_name,
                         required: true,
                         label: false,
                         autofocus: true,
-                        placeholder: '🧑‍💼 Last name',
+                        placeholder: '👤 Last name',
                         wrapper_html: { class: 'col-12 col-lg-6' },
                         input_html: { autocomplete: "last name" }%>
             </div>

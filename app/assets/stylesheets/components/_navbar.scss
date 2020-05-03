@@ -1,13 +1,6 @@
 .navbar-lewagon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: transparent;
-  height: 80px;
-  justify-content: space-between;
-  width: 100%;
-  padding: 1rem 3rem;
-  z-index: 3;
+  position: relative;
+  background-color: #222;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -18,7 +11,22 @@
   width: 150px;
 }
 
-@media (max-width: 767px) {
+@include media-breakpoint-up(sm) {
+  .navbar-lewagon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    height: 80px;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 3rem;
+    z-index: 3;
+  }
+}
+
+
+@include media-breakpoint-down(sm) {
   .navbar-light {
     .navbar-nav {
       .active {

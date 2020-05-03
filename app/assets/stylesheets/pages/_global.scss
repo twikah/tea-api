@@ -17,16 +17,21 @@ body {
 .left-container {
   background-color: #222;
   min-height: 30vh;
-  padding-top: 4rem;
+  padding-top: 1rem;
 }
 
-@include media-breakpoint-only(sm) {
+@include media-breakpoint-down(sm) {
   .left-container {
-    min-height: 8vh;
+    min-height: 25vh;
   }
 }
 
 .info-container {
   width: 85%;
   overflow-wrap: break-word;
+}
+
+.tea-cup-small {
+  width: 40%;
+  padding-top: 2rem;
 }
