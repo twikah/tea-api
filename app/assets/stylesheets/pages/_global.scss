@@ -20,6 +20,12 @@ body {
   padding-top: 4rem;
 }
 
+@include media-breakpoint-only(sm) {
+  .left-container {
+    min-height: 8vh;
+  }
+}
+
 .info-container {
   width: 85%;
 }

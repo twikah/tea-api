@@ -1,9 +1,42 @@
 .registration-card {
   box-shadow: 6px 3px 53px -30px #000;
   position: absolute;
-  left: -10%;
-  top: 20%;
-  z-index: 4;
+  left: 0.5em;
+  top: -85%;
+  margin: auto;
+  width: 95%;
+}
+
+@include media-breakpoint-up(sm) {
+  .registration-card {
+    left: 2.5em;
+    top: -50%;
+    margin: auto;
+    width: 85%;
+    z-index: 4;
+    .tea-cup-registration {
+      width: 30%;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .registration-card {
+    left: -25%;
+    top: 20%;
+    margin: auto;
+    width: 110%;
+    z-index: 4;
+    .tea-cup-registration {
+      width: 100%;
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .registration-card {
+    max-width: 880px;
+  }
 }
 
 .registration-card-left {
@@ -12,10 +45,6 @@
 
 .registration-card-right {
   background-color: #fafafa;
-}
-
-.tea-cup-registration {
-  width: 100%;
 }
 
 .rememberable-checkbox {
@@ -28,4 +57,48 @@
 
 .forgot-password-container {
   margin-top: -0.2rem;
+}
+
+.btn-registration {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  span {
+    transition: 0.3s;
+    transition-delay: 0.2s;
+  }
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0.5em;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: .3s,opacity .6s;
+  }
+  &:before {
+    content: attr(data-hover);
+    transform: translate(-150%,0);
+  }
+  &:hover span,
+  &:active span{
+    opacity: 0;
+    transform: scale(0.2);
+  }
+}
+
+.btn-registration:hover:before,
+.btn-registration:active:after {
+    opacity: 1;
+    transform: translate(0,0);
+}
+.btn-registration:active:before {
+    transform: translate(-100%,0);
+    transition-delay: 0s;
+}
+
+.call-out-signup {
+  font-size: 0.8rem;
 }

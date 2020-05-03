@@ -1,13 +1,13 @@
 <div class="row d-md-flex min-vh-100 min-vw-100">
-  <div class="col col-12 col-md-3 left-container"></div>
-  <div class="col col-12 col-md-9 py-5">
-    <div class="row w-75 d-flex registration-card">
-      <div class="col col-md-4 registration-card-left d-flex
-                  align-items-end rounded-left">
+  <div class="col col-12 col-md-4 left-container"></div>
+  <div class="col col-12 col-md-8 py-5">
+    <div class="row d-md-flex registration-card">
+      <div class="col-sm-12 col-md-4 registration-card-left d-none d-sm-block
+                  text-center d-md-flex align-items-end rounded-left">
         <%= image_tag "avatar.svg", class: "tea-cup-registration" %>
       </div>
-      <div class="col col-md-8 registration-card-right p-5 rounded-right">
-        <h2 class="pb-4">Log in</h2>
+      <div class="col-sm-12 col-md-8 registration-card-right p-4 px-sm-5 pt-sm-5 pb-sm-2 rounded-right">
+        <h2 class="pb-4 text-center text-md-left">Log in</h2>
 
         <%= simple_form_for(resource, as: resource_name,
                                       url: session_path(resource_name),
@@ -27,9 +27,10 @@
 
             <div class="row">
               <%= f.input :remember_me,
-                          wrapper_html: { class: 'rememberable-checkbox col' },
+                          wrapper_html: { class: 'rememberable-checkbox col-12 col-md-6' },
                           as: :boolean if devise_mapping.rememberable? %>
-              <div class="col text-right forgot-password-container">
+              <div class="col-12 col-md-6 text-md-right forgot-password-container
+                          d-none d-md-block">
                 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
                   <%= link_to "Forgot password?", new_password_path(resource_name),
                     class: 'links-small' %>
@@ -39,11 +40,29 @@
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Log in", class: 'btn btn-dark btn-block' %>
+            <%= f.button :button, '', { class: 'btn btn-dark btn-block btn-registration', "data-hover": "Let's go!"} do %>
+              <span>Log in</span>
+            <% end %>
+          </div>
+
+          <div class="col-12 col-md-6 text-center forgot-password-container
+                      d-md-none">
+            <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+              <%= link_to "Forgot password?", new_password_path(resource_name),
+                class: 'links-small' %>
+            <% end %>
           </div>
         <% end %>
-        <p class="text-center py-4">- OR -</p>
-        <%= link_to "Sign in with Github", user_github_omniauth_authorize_path %>
+        <p class="text-center py-2 py-sm-4 m-0">- OR -</p>
+        <%= link_to user_github_omniauth_authorize_path, class: 'btn btn-outline-dark btn-block' do %>
+          <i class="fab fa-github"></i> Log in with Github
+        <% end %>
+
+
+        <p class="call-out-signup text-center mt-3">
+          Don't have an account yet?
+          <%= link_to "Sign up", new_registration_path(resource_name) %>
+        </p>
       </div>
     </div>
   </div>
