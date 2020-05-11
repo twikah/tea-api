@@ -1,7 +1,26 @@
-<div class="row d-md-flex min-vh-100">
-  <div class="col col-12 col-md-4 left-container d-flex
-              align-items-end justify-content-center">
-    <%= image_tag "avatar.svg", class: "tea-cup-small d-md-none" %>
+<div class="row d-md-flex min-vh-100 min-vw-100">
+  <div class="col col-12 col-md-4 left-container py-5">
+    <div class="d-flex align-items-stretch">
+
+      <nav>
+        <div class="p-5">
+          <ul class="list-unstyled components mb-5">
+            <li>
+              <%= link_to 'Herbs', '#herbSubmenu', { class: "dropdown-toggle", data: { toggle: :collapse }, 'aria-expanded': "false" } %>
+              <ul class="collapse list-unstyled" id="herbSubmenu">
+                <li>
+                  <%= link_to 'Get Herbs', 'api?page=pages%2Fapi%2Fherbs%2Fget_herbs', remote: true %>
+                </li>
+                <li>
+                  <%= link_to 'Show Herbs', 'api?page=pages%2Fapi%2Fherbs%2Fshow_herbs', remote: true %>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    </div>
   </div>
 
   <div class="col col-12 col-md-8 d-flex flex-column
@@ -9,7 +28,12 @@
     <div class="info-container py-5">
       <h2 class="pb-4">Here are the available API methods</h2>
 
-      <h3 class="py-3">Herbs</h3>
+
+      <div id="api-page-content">
+
+      </div>
+
+      <!-- <h3 class="py-3">Herbs</h3>
       <p><strong>List all herbs</strong></p>
       <p>https://theteaapi.herokuapp.com/api/v1/herbs</p>
       <p><strong>Search for herbs by name</strong></p>
@@ -43,7 +67,7 @@
       <p><strong>Show a specific ingredient by name</strong></p>
       <p>
         https://theteaapi.herokuapp.com/api/v1/herb_types/<em>enter_ingredient_name</em>
-      </p>
+      </p> -->
     </div>
   </div>
 </div>

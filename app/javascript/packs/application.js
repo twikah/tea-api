@@ -33,3 +33,17 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
 });
 
+const apiMethodLinks = document.querySelectorAll('a[data-remote]')
+const pageContainer = document.querySelector('#api-page-content')
+
+apiMethodLinks.forEach(function (apiMethodLink) {
+  apiMethodLink.addEventListener('ajax:success', function (event) {
+    pageContainer.innerHTML = event.detail[2].response;
+    console.log(event);
+  })
+})
+
+// $("a[data-remote]").on("ajax:success", function (event) {
+//   console.log(event);
+//   $('#api-page-content').html(event.detail[2].response);
+// })

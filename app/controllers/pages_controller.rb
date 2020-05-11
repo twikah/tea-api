@@ -5,5 +5,8 @@ class PagesController < ApplicationController
   end
 
   def api
+    if params[:page].present?
+      render partial: params[:page], layout: false
+    end
   end
 end
