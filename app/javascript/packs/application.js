@@ -28,20 +28,19 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+
 document.addEventListener('turbolinks:load', () => {
+  const apiMethodLinks = document.querySelectorAll('a[data-remote]')
+  const pageContainer = document.querySelector('#api-page-content')
   // Call your functions here, e.g:
   // initSelect2();
-});
-
-const apiMethodLinks = document.querySelectorAll('a[data-remote]')
-const pageContainer = document.querySelector('#api-page-content')
-
-apiMethodLinks.forEach(function (apiMethodLink) {
-  apiMethodLink.addEventListener('ajax:success', function (event) {
+  apiMethodLinks.forEach(function (apiMethodLink) {
+    apiMethodLink.addEventListener('ajax:success', function (event) {
     pageContainer.innerHTML = event.detail[2].response;
     console.log(event);
+    })
   })
-})
+});
 
 // $("a[data-remote]").on("ajax:success", function (event) {
 //   console.log(event);
