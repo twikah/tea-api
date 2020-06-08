@@ -1,1 +1,47 @@
-<h1>Hello from herb types</h1>
+<article class="GET docs-container">
+  <header class="header-bg-dark d-sm-flex justify-content-sm-between
+                 align-items-sm-center py-2 px-3">
+    <h2 class="pb-2 pb-sm-0 m-0">Get Herb Types</h2>
+    <code class="m-0">
+      <b>GET</b> /herb_types
+    </code>
+  </header>
+
+  <section class="p-3 inner-docs-container">
+    <p>Lists all herb types.</p>
+
+    <h3 class="subheader-bold">Request</h3>
+
+    <p>https://theteaapi.herokuapp.com/api/v1/herb_types</p>
+
+    <h3 class="subheader-bold">Response</h3>
+
+    <p>Sends back a JSON object as a collection of all herb types.</p>
+
+    <p>
+      <code>
+        Status: 200 OK
+      </code>
+      <code>
+        [
+          {
+            "id": 1,
+            "name": "black tea",
+            "herb": {
+              id": 1,
+              "name": "camellia sinensis"
+            }
+          },
+          {
+            "id": 2,
+            "name": "white tea",
+            "herb": {
+              "id": 1,
+              "name": "camellia sinensis"
+            }
+          }
+        ]
+      </code>
+    </p>
+  </section>
+</article>

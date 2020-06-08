@@ -1,0 +1,57 @@
+<article class="POST docs-container">
+  <header class="header-bg-dark d-sm-flex justify-content-sm-between
+                align-items-sm-center py-2 px-3">
+    <h2 class="pb-2 pb-sm-0 m-0">Post Herb Type</h2>
+    <code class="m-0">
+      <b>POST</b> /herb_types
+    </code>
+  </header>
+
+  <section class="p-3 inner-docs-container">
+    <p>This method allows users to create a new herb type.</p>
+
+    <h3 class="subheader-bold">Request</h3>
+
+    <p>https://theteaapi.herokuapp.com/api/v1/herb_types</p>
+
+    <ul>
+      <li>
+        The headers must include a valid authentication token.
+      </li>
+      <li>
+        The body can’t be empty and must include at least the name attribute,
+        a string that will be used as the name of the herb type and the
+        corresponding herb_id.
+      </li>
+    </ul>
+
+    <p>
+      <code>
+        {
+          "name": "my new herb type",
+          "herb_id": 4
+        }
+      </code>
+    </p>
+
+    <h3 class="subheader-bold">Response</h3>
+
+    <p>If succeeds, returns the newly created herb type.</p>
+
+    <p>
+      <code>
+        Status: 201 Created
+      </code>
+      <code>
+        {
+          "id": 5,
+          "name": "my new herb type",
+          "herb": {
+            "id": 4,
+            "name": "my new herb"
+          }
+        }
+      </code>
+    </p>
+  </section>
+</article>

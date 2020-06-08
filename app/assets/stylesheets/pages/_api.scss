@@ -1,0 +1,66 @@
+.sidebar-menu {
+  font-size: 1.1rem;
+  color: #749B51;
+  margin: 7px 0 2px;
+}
+
+.placeholder {
+  color: #aaa;
+}
+
+.header-bg-dark {
+  background-color: #222323;
+  border-radius: 3px;
+  h2 {
+    color: #EAEAEA;
+    font-size: 1.1rem;
+  }
+}
+
+.subheader-bold {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.docs-container header code {
+  font-size: 1rem;
+  font-weight: lighter;
+}
+
+.docs-container header code b {
+  border-radius: 2px;
+  color: #EAEAEA;
+  padding: 3px 6px;
+}
+
+/* GET */
+article.GET header code {
+  color: #119bdf;
+}
+
+article.GET header code b {
+  background-color: #119bdf;
+}
+
+/* POST */
+article.POST header code {
+  color: #52ce0e;
+}
+
+article.POST header code b {
+  background: #52ce0e;
+}
+
+.inner-docs-container code {
+  border: 1px solid #e2e7ea;
+  background-color: #eef1f2;
+  border-radius: 2px;
+  color: #546974;
+  padding: 0 1px;
+  margin-bottom: 10px;
+}
+
+.inner-docs-container p > code {
+  display: block;
+  white-space: pre;
+}

@@ -1,0 +1,51 @@
+<article class="POST docs-container">
+  <header class="header-bg-dark d-sm-flex justify-content-sm-between
+                align-items-sm-center py-2 px-3">
+    <h2 class="pb-2 pb-sm-0 m-0">Post Misc Ingredient</h2>
+    <code class="m-0">
+      <b>POST</b> /misc_ingredients
+    </code>
+  </header>
+
+  <section class="p-3 inner-docs-container">
+    <p>This method allows users to create a new miscelaneous ingredient.</p>
+
+    <h3 class="subheader-bold">Request</h3>
+
+    <p>https://theteaapi.herokuapp.com/api/v1/misc_ingredients</p>
+
+    <ul>
+      <li>
+        The headers must include a valid authentication token.
+      </li>
+      <li>
+        The body can’t be empty and must include the name attribute,
+        a string that will be used as the name of the miscelaneous ingredient.
+      </li>
+    </ul>
+
+    <p>
+      <code>
+        {
+          "name": "my new miscelaneous ingredient"
+        }
+      </code>
+    </p>
+
+    <h3 class="subheader-bold">Response</h3>
+
+    <p>If succeeds, returns the newly created miscelaneous ingredient.</p>
+
+    <p>
+      <code>
+        Status: 201 Created
+      </code>
+      <code>
+        {
+          "id": 3,
+          "name": "my new miscelaneous ingredient"
+        }
+      </code>
+    </p>
+  </section>
+</article>

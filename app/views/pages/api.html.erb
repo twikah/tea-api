@@ -1,42 +1,54 @@
 <div class="row d-md-flex min-vh-100 min-vw-100">
   <div class="col col-12 col-md-4 left-container py-5">
-    <div class="d-flex align-items-stretch">
-
+    <div class="align-items-stretch">
       <nav>
-        <div class="p-5">
+        <div class="pl-4 p-sm-5">
           <ul class="list-unstyled components mb-5">
             <li>
-              <%= link_to 'Herbs', '#herbSubmenu', { class: "dropdown-toggle", data: { toggle: :collapse }, 'aria-expanded': "false" } %>
-              <ul class="collapse list-unstyled" id="herbSubmenu">
-                <li>
+              <p class="sidebar-menu">Herbs</p>
+              <ul class="list-unstyled">
+                <li class="ml-3">
                   <%= link_to 'Get Herbs', 'api?page=pages%2Fapi%2Fherbs%2Fget_herbs', remote: true %>
                 </li>
-                <li>
-                  <%= link_to 'Show Herbs', 'api?page=pages%2Fapi%2Fherbs%2Fshow_herbs', remote: true %>
+                <li class="ml-3">
+                  <%= link_to 'Post a Herb', 'api?page=pages%2Fapi%2Fherbs%2Fpost_a_herb', remote: true %>
                 </li>
               </ul>
             </li>
             <li>
-
+              <p class="sidebar-menu">Herb Types</p>
+              <ul class="list-unstyled">
+                <li class="ml-3">
+                  <%= link_to 'Get Herb Types', 'api?page=pages%2Fapi%2Fherb_types%2Fget_herb_types', remote: true %>
+                </li>
+                <li class="ml-3">
+                  <%= link_to 'Post a Herb Type', 'api?page=pages%2Fapi%2Fherb_types%2Fpost_a_herb_type', remote: true %>
+                </li>
+              </ul>
             </li>
             <li>
-
+              <p class="sidebar-menu">Miscelaneous Ingredients</p>
+              <ul class="list-unstyled">
+                <li class="ml-3">
+                  <%= link_to 'Get Misc Ingredients', 'api?page=pages%2Fapi%2Fmisc_ingredients%2Fget_misc_ingredients', remote: true %>
+                </li>
+                <li class="ml-3">
+                  <%= link_to 'Post a Misc Ingredient', 'api?page=pages%2Fapi%2Fmisc_ingredients%2Fpost_a_misc_ingredient', remote: true %>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
       </nav>
-
     </div>
   </div>
 
-  <div class="col col-12 col-md-8 d-flex flex-column
-              justify-content-center align-items-center py-5">
-    <div class="info-container py-5">
-      <h2 class="pb-4">Here are the available API methods</h2>
-
-
+  <div class="col col-12 col-md-8 py-5">
+    <div class="info-container py-md-5 mr-md-5">
       <div id="api-page-content">
-
+        <div class="placeholder mt-3">
+          <h3>// Please check the menus on the sidebar for documentation...</h3>
+        </div>
       </div>
 
       <!-- <h3 class="py-3">Herbs</h3>

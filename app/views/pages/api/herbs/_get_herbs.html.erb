@@ -1,1 +1,51 @@
-<h1>HERBS PAGE</h1>
+<article class="GET docs-container">
+  <header class="header-bg-dark d-sm-flex justify-content-sm-between
+                align-items-sm-center py-2 px-3">
+    <h2 class="pb-2 pb-sm-0 m-0">Get Herbs</h2>
+    <code class="m-0">
+      <b>GET</b> /herbs
+    </code>
+  </header>
+
+  <section class="p-3 inner-docs-container">
+    <p>Lists all herbs.</p>
+
+    <h3 class="subheader-bold">Request</h3>
+
+    <p>https://theteaapi.herokuapp.com/api/v1/herbs</p>
+
+    <h3 class="subheader-bold">Response</h3>
+
+    <p>Sends back a JSON object as a collection of all herbs.</p>
+
+    <p>
+      <code>
+        Status: 200 OK
+      </code>
+      <code>
+        [
+          {
+            "id": 2,
+            "name": "glycyrrhiza glabra",
+            "herb_types": [
+              {
+                "id": 7,
+                "name": "liquorice root"
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "name": "arctium",
+            "herb_types": [
+              {
+                "id": 8,
+                "name": "burdock root"
+              }
+            ]
+          }
+        ]
+      </code>
+    </p>
+  </section>
+</article>
