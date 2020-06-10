@@ -1,0 +1,42 @@
+<article class="DELETE docs-container">
+  <header class="header-bg-dark d-sm-flex justify-content-sm-between
+                align-items-sm-center py-2 px-3">
+    <h2 class="pb-2 pb-sm-0 m-0">Delete a Misc Ingredient</h2>
+    <code class="m-0">
+      <b>DELETE</b> /misc_ingredients/:id
+    </code>
+  </header>
+
+  <section class="p-3 inner-docs-container">
+    <p>This method allows users to delete an existing miscelaneous ingredient.</p>
+
+    <h3 class="subheader-bold">Request</h3>
+
+    <p>https://theteaapi.herokuapp.com/api/v1/misc_ingredients/<em>:id</em></p>
+    <p>OR</p>
+    <p>https://theteaapi.herokuapp.com/api/v1/misc_ingredients/<em>misc-ingredient-name</em></p>
+
+    <ul>
+      <li>
+        The headers must include a valid authentication token.
+      </li>
+      <li>
+        :id is the id the herb type to delete.
+        You can also use the miscelaneous ingredient's name.
+      </li>
+      <li>
+        The body is omitted.
+      </li>
+    </ul>
+
+    <h3 class="subheader-bold">Response</h3>
+
+    <p>If succeeds, returns an empty response with the status 204.</p>
+
+    <p>
+      <code>
+    Status: 204 No Content
+      </code>
+    </p>
+  </section>
+</article>

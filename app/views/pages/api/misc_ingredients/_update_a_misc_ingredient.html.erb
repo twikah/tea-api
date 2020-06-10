@@ -1,22 +1,28 @@
-<article class="POST docs-container">
+<article class="PUT docs-container">
   <header class="header-bg-dark d-sm-flex justify-content-sm-between
                 align-items-sm-center py-2 px-3">
-    <h2 class="pb-2 pb-sm-0 m-0">Post a Misc Ingredient</h2>
+    <h2 class="pb-2 pb-sm-0 m-0">Update a Misc Ingredient</h2>
     <code class="m-0">
-      <b>POST</b> /misc_ingredients
+      <b>PUT</b> /misc_ingredients/:id
     </code>
   </header>
 
   <section class="p-3 inner-docs-container">
-    <p>This method allows users to create a new miscelaneous ingredient.</p>
+    <p>This method allows users to retrieve and edit a specific miscelaneous ingredient.</p>
 
     <h3 class="subheader-bold">Request</h3>
 
-    <p>https://theteaapi.herokuapp.com/api/v1/misc_ingredients</p>
+    <p>https://theteaapi.herokuapp.com/api/v1/misc_ingredients/<em>:id</em></p>
+    <p>OR</p>
+    <p>https://theteaapi.herokuapp.com/api/v1/misc_ingredients/<em>misc-ingredient-name</em></p>
 
     <ul>
       <li>
         The headers must include a valid authentication token.
+      </li>
+      <li>
+        :id is the id the misc ingredient to update. You can also use the
+        miscelaneous ingredient's name.
       </li>
       <li>
         The body can’t be empty and must include the name attribute,
@@ -27,23 +33,24 @@
     <p>
       <code>
     {
-      "name": "my new miscelaneous ingredient"
+      "id": 3,
+      "name": "changing my new misc ingredient"
     }
       </code>
     </p>
 
     <h3 class="subheader-bold">Response</h3>
 
-    <p>If succeeds, returns the newly created miscelaneous ingredient.</p>
+    <p>If succeeds, returns the updated miscelaneous ingredient.</p>
 
     <p>
       <code>
-    Status: 201 Created
+    Status: 200 OK
       </code>
       <code>
     {
       "id": 3,
-      "name": "my new miscelaneous ingredient"
+      "name": "changing my new misc ingredient"
     }
       </code>
     </p>

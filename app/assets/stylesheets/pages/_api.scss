@@ -48,7 +48,25 @@ article.POST header code {
 }
 
 article.POST header code b {
-  background: #52ce0e;
+  background-color: #52ce0e;
+}
+
+/* PUT */
+article.PUT header code {
+  color: #e08f10;
+}
+
+article.PUT header code b {
+  background-color: #e08f10;
+}
+
+/* DELETE */
+article.DELETE header code {
+  color: #e02a10;
+}
+
+article.DELETE header code b {
+  background-color: #e02a10;
 }
 
 .inner-docs-container code {

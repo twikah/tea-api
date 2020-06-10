@@ -1,0 +1,59 @@
+<article class="PUT docs-container">
+  <header class="header-bg-dark d-sm-flex justify-content-sm-between
+                align-items-sm-center py-2 px-3">
+    <h2 class="pb-2 pb-sm-0 m-0">Update a Herb Type</h2>
+    <code class="m-0">
+      <b>PUT</b> /herb_types/:id
+    </code>
+  </header>
+
+  <section class="p-3 inner-docs-container">
+    <p>This method allows users to retrieve and edit a specific herb type.</p>
+
+    <h3 class="subheader-bold">Request</h3>
+
+    <p>https://theteaapi.herokuapp.com/api/v1/herb_types/<em>:id</em></p>
+    <p>OR</p>
+    <p>https://theteaapi.herokuapp.com/api/v1/herb_types/<em>herb-type-name</em></p>
+
+    <ul>
+      <li>
+        The headers must include a valid authentication token.
+      </li>
+      <li>
+        :id is the id the herb type to update. You can also use the herb type's name.
+      </li>
+      <li>
+        The body can’t be empty and must include the name attribute,
+        a string that will be used as the name of the herb type.
+      </li>
+    </ul>
+
+    <p>
+      <code>
+    {
+      "id": 5,
+      "name": "changing my new herb type",
+      "herb_id": 4
+    }
+      </code>
+    </p>
+
+    <h3 class="subheader-bold">Response</h3>
+
+    <p>If succeeds, returns the updated herb type.</p>
+
+    <p>
+      <code>
+    Status: 200 OK
+      </code>
+      <code>
+    {
+      "id": 5,
+      "name": "changing my new herb type",
+      "herb_id": 4
+    }
+      </code>
+    </p>
+  </section>
+</article>
